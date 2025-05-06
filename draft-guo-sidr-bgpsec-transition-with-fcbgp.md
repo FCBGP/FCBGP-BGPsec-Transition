@@ -1,9 +1,9 @@
 ---
 title: "Transition to Full BGPsec Deployment with FC-BGP"
-abbrev: "FC-BGP BGPsec Transition"
+abbrev: "BGPsec Transition with FC-BGP"
 category: std
 
-docname: draft-guo-sidr-fcbgp-bgpsec-transition-latest
+docname: draft-guo-sidr-bgpsec-transition-with-fcbgp-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
@@ -11,17 +11,17 @@ consensus: true
 v: 3
 area: ""
 workgroup: "Secure Inter-Domain Routing"
-# keyword:
-# - next generation
-# - unicorn
-# - sparkling distributed ledger
+keyword:
+ - BGPsec
+ - FC-BGP
+ - inter-domain routing
 venue:
   group: "Secure Inter-Domain Routing"
-  type: ""
-  mail: "sidr@ietf.org"
-  arch: "https://mailarchive.ietf.org/arch/browse/sidr/"
-  github: "FCBGP/FCBGP-BGPsec-Transition"
-  latest: "https://FCBGP.github.io/FCBGP-BGPsec-Transition/draft-guo-sidr-fcbgp-bgpsec-transition.html"
+  # type: ""
+  # mail: "sidr@ietf.org"
+  # arch: "https://mailarchive.ietf.org/arch/browse/sidr/"
+  github: "FCBGP/BGPsec-Transition"
+  latest: "https://FCBGP.github.io/BGPsec-Transition/draft-guo-sidr-bgpsec-transition-with-fcbgp.html"
 
 author:
  -
