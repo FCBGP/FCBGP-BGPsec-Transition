@@ -4,12 +4,12 @@
 
 Secure Inter-Domain Routing                                      X. Wang
 Internet-Draft                                       Tsinghua University
-Intended status: Standards Track                              6 May 2025
-Expires: 7 November 2025
+Intended status: Standards Track                              9 May 2025
+Expires: 10 November 2025
 
 
-            Transition to Full BGPsec Deployment with FC-BGP
-           draft-guo-sidr-bgpsec-transition-with-fcbgp-latest
+                  Transition to Full BGPsec Deployment
+              draft-wang-sidrops-bgpsec-transition-latest
 
 Abstract
 
@@ -20,10 +20,10 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at
-   https://FCBGP.github.io/BGPsec-Transition/draft-guo-sidr-bgpsec-
-   transition-with-fcbgp.html.  Status information for this document may
-   be found at https://datatracker.ietf.org/doc/draft-guo-sidr-bgpsec-
-   transition-with-fcbgp/.
+   https://FCBGP.github.io/BGPsec-Transition/draft-wang-sidrops-bgpsec-
+   transition.html.  Status information for this document may be found
+   at https://datatracker.ietf.org/doc/draft-wang-sidrops-bgpsec-
+   transition/.
 
    Source for this draft and an issue tracker can be found at
    https://github.com/FCBGP/BGPsec-Transition.
@@ -43,7 +43,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 7 November 2025.
+   This Internet-Draft will expire on 10 November 2025.
 
 Copyright Notice
 
