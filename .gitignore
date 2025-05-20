@@ -18,7 +18,7 @@
 /versioned/
 Gemfile.lock
 archive.json
-draft-guo-sidr-fcbgp-bgpsec-transition.xml
+draft-wang-sidrops-bgpsec-transition.xml
 package-lock.json
 report.xml
 !requirements.txt
