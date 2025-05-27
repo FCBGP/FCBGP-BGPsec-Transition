@@ -58,7 +58,7 @@ informative:
 
 --- abstract
 
-This document describes a means to facilitate the deployment of BGPsec.
+This document describes a means to facilitate the deployment of BGPsec. It modifies the BGPsec_PATH attribute to a transitive attribute and then addresses some problems brought by this change. It still aims to attest that every AS within the sequence of ASes enumerated in the UPDATE message has explicitly authorized the advertisement of the route.
 
 --- middle
 
@@ -74,41 +74,57 @@ This document aims to facilitate the deployment of BGPsec.
 
 {::boilerplate bcp14-tagged}
 
-# Problem Statements
-
+<!-- # Problem Statements -->
+<!--
 The global adoption of BGPsec faces significant barriers rooted in technical incompatibilities, operational complexities, and coordination dependencies. We have summaried them as follows.
-
+-->
 <!-- ## ​Mandatory Capability Negotiation​​ -->
+<!--
 1. BGPsec requires explicit capability negotiation between peering routers during session establishment. If either peer lacks BGPsec support, the protocol defaults to legacy BGP operation, creating fragmented security coverage in heterogeneous network environments. Thus, when an AS wants to deploy BGPsec, it must require its peers to also implement and deploy BGPsec. Otherwise, BGPsec will downgrade to traditional BGP and cannot transit transparently over legacy BGP areas.
-
+-->
 <!-- ## ​​Backward Compatibility Gaps​​ -->
+<!--
 2. The BGPsec_Path attribute replaces AS_PATH/AS4_PATH with cryptographically signed routing data. No graceful degradation mechanism exists for mixed BGPsec-legacy paths. Critical path attributes may be stripped or misinterpreted when traversing legacy nodes, potentially violating routing integrity.
-
+-->
 <!-- ## Degraded Path Visibility -->
+<!--
 3. The reliance of legacy systems on AS path information for critical functions (e.g., loop prevention, route prioritization) creates operational hazards when BGPsec_Path is uninterpreted. This may result in suboptimal path selection or unintended traffic blackholing.
-
+-->
 <!-- ## ​​Nonlinear Security Benefits​​ -->
+<!--
 4. End-to-end security guarantees are contingent on full-path BGPsec adoption. Partial deployment leaves unsigned AS-path segments vulnerable to forgery, creating a "weakest link" security model that undermines incentives for early adopters.
-
+-->
 <!-- ## ​​Operational Overhead and Infrastructure Demands​​ -->
 <!-- ​​Computational Costs​​: -->
+<!--
 5. Cryptographic signing/validation of updates at each AS hop imposes substantial processing overhead, necessitating hardware upgrades and optimized signing algorithms for large-scale deployments.
-
+-->
 <!-- ​​PKI Governance Requirements -->
+<!--
 6. BGPsec requires the establishment of a globally trusted Public Key Infrastructure (PKI) for certificate issuance, revocation, and lifecycle management. Maintaining this PKI at internet-scale demands unprecedented cross-organizational coordination.
-
+-->
 <!-- ## ​​Coordination and Adoption Impediments​​ -->
 <!-- ​​Universal Adoption Dilemma​​ -->
+<!--
 7. The protocol's security value is realized only through near-universal adoption, yet achieving consensus among autonomous network operators with divergent priorities remains a systemic challenge.
-
+-->
 <!-- ​​Resource Disparities -->
 <!-- 8. Smaller networks face disproportionate financial and technical burdens in upgrading infrastructure, implementing PKI workflows, and maintaining signing operations, exacerbating adoption asymmetries. -->
-
+<!--
 This document mainly focuses on the technical incompatibilities to make BGPsec incrementally deployable.
+-->
+
+# Gap Analysis
+
+Traditional BGPsec is hard to achieve incremental deployment. This document mainly focuses on making BGPsec incrementally deployable.
+
+It has at least two barriers to make BGPsec become transitive BGPsec. In the OPEN phase, BGPsec requires two BGPsec peers to negotiate BGPsec capability and multiprotocol capability. In the UPDATE phase, the BGPsec_Path attribute is a non-transitive attribute.
+
+This document renders BGPsec transitive to facilitate the deployment of BGPsec.
 
 # Transitive BGPsec
 
-TODO
+
 
 # Security Considerations
 
