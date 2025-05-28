@@ -58,17 +58,21 @@ informative:
 
 --- abstract
 
-This document describes a means to facilitate the deployment of BGPsec. It modifies the BGPsec_PATH attribute to a transitive attribute and then addresses some problems brought by this change. It still aims to attest that every AS within the sequence of ASes enumerated in the UPDATE message has explicitly authorized the advertisement of the route.
+This document describes a means to facilitate the deployment of BGPsec. It modifies the non-transitive BGPsec_PATH attribute to a transitive BGPsec_PATH attribute and addresses some problems this modification brings. It still aims to attest that every AS within the sequence of ASes enumerated in the UPDATE message has explicitly authorized the advertisement of the route.
 
 --- middle
 
 # Introduction
 
-The Border Gateway Protocol (BGP) {{RFC4271}} lacks inherent security mechanisms, especially for its Autonomous Systems (ASes) path and origin prefix information, making it vulnerable to route leaks and hijackings.
+The Border Gateway Protocol (BGP) {{RFC4271}} is deficient in intrinsic security mechanisms, particularly regarding the Autonomous Systems (ASes) path information and origin prefix information. As a result, it is susceptible to route leaks and hijackings.
 
-BGPsec, defined in {{RFC8205}}, extends BGP to enhance security for AS path information. However, it employs an optional non-transitive BGP path attribute to carry digital signatures, complicating incremental deployment.
+Traditional BGPsec, as defined in {{RFC8205}}, extends BGP to fortify the security of AS path information. Nevertheless, traditional BGPsec encounters challenges in achieving incremental deployment. It utilizes an optional non-transitive BGP path attribute to convey digital signatures, thereby complicating incremental deployment.
 
-This document aims to facilitate the deployment of BGPsec.
+The principal objective of this document is to make BGPsec incrementally deployable. Driven by this aim, it modifies the traditional BGPsec into transitive BGPsec.
+
+There exist at least two obstacles to transforming BGPsec into transitive BGPsec. During the OPEN phase, BGPsec necessitates that two BGPsec peers engage in the negotiation of BGPsec capability and multiprotocol capability. In the UPDATE phase, the BGPsec_PATH attribute, being non-transitive, cannot traverse transparently across the legacy BGP area.
+
+The objective of this document is to facilitate the deployment of BGPsec. This document modifies the non-transitive BGPsec_PATH into the transitive BGPsec_PATH and addresses the issues arising from this modification.
 
 ## Conventions and Definitions
 
@@ -113,14 +117,6 @@ The global adoption of BGPsec faces significant barriers rooted in technical inc
 <!--
 This document mainly focuses on the technical incompatibilities to make BGPsec incrementally deployable.
 -->
-
-# Gap Analysis
-
-Traditional BGPsec is hard to achieve incremental deployment. This document mainly focuses on making BGPsec incrementally deployable.
-
-It has at least two barriers to make BGPsec become transitive BGPsec. In the OPEN phase, BGPsec requires two BGPsec peers to negotiate BGPsec capability and multiprotocol capability. In the UPDATE phase, the BGPsec_Path attribute is a non-transitive attribute.
-
-This document renders BGPsec transitive to facilitate the deployment of BGPsec.
 
 # Transitive BGPsec
 
