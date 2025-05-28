@@ -5,9 +5,9 @@
 Secure Inter-Domain Routing                                        K. Xu
 Internet-Draft                                                   X. Wang
 Intended status: Standards Track                                  Z. Liu
-Expires: 21 November 2025                                          Q. Li
+Expires: 29 November 2025                                          Q. Li
                                                      Tsinghua University
-                                                             20 May 2025
+                                                             28 May 2025
 
 
                   Transition to Full BGPsec Deployment
@@ -16,7 +16,11 @@ Expires: 21 November 2025                                          Q. Li
 Abstract
 
    This document describes a means to facilitate the deployment of
-   BGPsec.
+   BGPsec.  It modifies the BGPsec_PATH attribute to a transitive
+   attribute and then addresses some problems brought by this change.
+   It still aims to attest that every AS within the sequence of ASes
+   enumerated in the UPDATE message has explicitly authorized the
+   advertisement of the route.
 
 About This Document
 
@@ -46,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 21 November 2025.
+   This Internet-Draft will expire on 29 November 2025.
 
 Copyright Notice
 
@@ -66,7 +70,7 @@ Table of Contents
 
    1.  Introduction
      1.1.  Conventions and Definitions
-   2.  Problem Statements
+   2.  Gap Analysis
    3.  Transitive BGPsec
    4.  Security Considerations
    5.  IANA Considerations
@@ -98,59 +102,20 @@ Table of Contents
    BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
-2.  Problem Statements
+2.  Gap Analysis
 
-   The global adoption of BGPsec faces significant barriers rooted in
-   technical incompatibilities, operational complexities, and
-   coordination dependencies.  We have summaried them as follows.
+   Traditional BGPsec is hard to achieve incremental deployment.  This
+   document mainly focuses on making BGPsec incrementally deployable.
 
-   1.  BGPsec requires explicit capability negotiation between peering
-       routers during session establishment.  If either peer lacks
-       BGPsec support, the protocol defaults to legacy BGP operation,
-       creating fragmented security coverage in heterogeneous network
-       environments.  Thus, when an AS wants to deploy BGPsec, it must
-       require its peers to also implement and deploy BGPsec.
-       Otherwise, BGPsec will downgrade to traditional BGP and cannot
-       transit transparently over legacy BGP areas.
+   It has at least two barriers to make BGPsec become transitive BGPsec.
+   In the OPEN phase, BGPsec requires two BGPsec peers to negotiate
+   BGPsec capability and multiprotocol capability.  In the UPDATE phase,
+   the BGPsec_Path attribute is a non-transitive attribute.
 
-   1.  The BGPsec_Path attribute replaces AS_PATH/AS4_PATH with
-       cryptographically signed routing data.  No graceful degradation
-       mechanism exists for mixed BGPsec-legacy paths.  Critical path
-       attributes may be stripped or misinterpreted when traversing
-       legacy nodes, potentially violating routing integrity.
-
-   1.  The reliance of legacy systems on AS path information for
-       critical functions (e.g., loop prevention, route prioritization)
-       creates operational hazards when BGPsec_Path is uninterpreted.
-       This may result in suboptimal path selection or unintended
-       traffic blackholing.
-
-   1.  End-to-end security guarantees are contingent on full-path BGPsec
-       adoption.  Partial deployment leaves unsigned AS-path segments
-       vulnerable to forgery, creating a "weakest link" security model
-       that undermines incentives for early adopters.
-
-   1.  Cryptographic signing/validation of updates at each AS hop
-       imposes substantial processing overhead, necessitating hardware
-       upgrades and optimized signing algorithms for large-scale
-       deployments.
-
-   1.  BGPsec requires the establishment of a globally trusted Public
-       Key Infrastructure (PKI) for certificate issuance, revocation,
-       and lifecycle management.  Maintaining this PKI at internet-scale
-       demands unprecedented cross-organizational coordination.
-
-   1.  The protocol's security value is realized only through near-
-       universal adoption, yet achieving consensus among autonomous
-       network operators with divergent priorities remains a systemic
-       challenge.
-
-   This document mainly focuses on the technical incompatibilities to
-   make BGPsec incrementally deployable.
+   This document renders BGPsec transitive to facilitate the deployment
+   of BGPsec.
 
 3.  Transitive BGPsec
-
-   TODO
 
 4.  Security Considerations
 
@@ -178,7 +143,9 @@ Table of Contents
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
-   [RFC8205]  "*** BROKEN REFERENCE ***".
+   [RFC8205]  Lepinski, M., Ed. and K. Sriram, Ed., "BGPsec Protocol
+              Specification", RFC 8205, DOI 10.17487/RFC8205, September
+              2017, <https://www.rfc-editor.org/rfc/rfc8205>.
 
 6.2.  Informative References
 
