@@ -120,9 +120,9 @@ This document mainly focuses on the technical incompatibilities to make BGPsec i
 
 # BGPsec Negotiation
 
-As stipulated in {{Sec. 2.2 of RFC8205}}, for a BGPsec router to successfully negotiate with its peer, it must transmit the BGPsec Capabilities that are in accordance with those of its peers in the BGP OPEN message. However, the transitive path attribute does not require the negotiation of capabilities with peers. In the event that a peer fails to comprehend the transitive path attribute, it merely forwards it to downstream BGP speakers.
+As stipulated in {{Section 2.2 of RFC8205}}, for a BGPsec router to successfully negotiate with its peer, it must transmit the BGPsec Capabilities that are in accordance with those of its peers in the BGP OPEN message. However, the transitive path attribute does not require the negotiation of capabilities with peers. In the event that a peer fails to comprehend the transitive path attribute, it merely forwards it to downstream BGP speakers.
 
-In transitive BGPsec, there is no requirement to negotiate the BGPsec capability. However, a BGPsec router is still obligated to inform its peer that it has support for transitive BGPsec. In this scenario, the reuse of the BGPsec capability is essential. Nevertheless, there is no requirement to utilize the Dir field and the AFI field. Consequently, the version field of the BGPsec capability must be updated to 1, while the remaining fields should be filled with 0.
+In transitive BGPsec, there is no requirement to negotiate the BGPsec capability. However, a BGPsec router is still obligated to inform its peer that it has support for transitive BGPsec. In this scenario, the reuse of the BGPsec capability is essential. Nevertheless, there is no requirement to utilize the Dir field and the AFI field. Transitive BGPsec reuses traditional BGPsec capability format. Consequently, the version field of the BGPsec capability must be updated to 1, while the remaining fields should be filled with 0.
 
 If a BGPsec router negotiates with its peers and the version value of the BGPsec capability is set to 1, this implies that the router supports transitive BGPsec. In this scenario, the BGPsec capability serves two purposes. Firstly, it notifies the peer that this particular BGP speaker is capable of supporting transitive BGPsec. Secondly, it differentiates transitive BGPsec from traditional BGPsec to ensure compatibility.
 
@@ -130,11 +130,15 @@ For the sake of compatibility, this document designates that it still supports t
 
 # The BGPsec_PATH Attribute
 
+In transitive BGPsec, all the packet formats of the BGPsec_PATH attribute are reused, including the BGPsec_PATH attribute format, Secure_Path format, Secure_Path Segment format, Signature_Block format, and Signature_Block Segment format.
+
 In traditional BGPsec, the BGPsec_PATH attribute is an optional non-transitive BGP path attribute. However, within this document, the BGPsec_PATH attribute is defined as an optional transitive BGP path attribute. It is important to note that the attribute code should remain the same as that of the traditional BGPsec_PATH attribute.
 
-In transitive BGPsec, the format of the BGPsec_PATH attribute is reused.
+# BGPsec UPDATE Messages
 
 The AS_PATH is a mandatory path attribute in the legacy BGP UPDATE message. It is of fundamental importance to achieve transparent traversal of legacy BGP. The AS_PATH attribute is retained. This implies that, in transitive BGPsec, both the AS_PATH and BGPsec_PATH attributes will co-exist within the BGP UPDATE message.
+
+
 
 
 # Security Considerations
