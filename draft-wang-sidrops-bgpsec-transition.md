@@ -132,10 +132,9 @@ For the sake of compatibility, this document designates that it still supports t
 
 In traditional BGPsec, the BGPsec_PATH attribute is an optional non-transitive BGP path attribute. However, within this document, the BGPsec_PATH attribute is defined as an optional transitive BGP path attribute. It is important to note that the attribute code should remain the same as that of the traditional BGPsec_PATH attribute.
 
-In transitive BGPsec, the format of the BGPsec_PATH attribute is reused. Additionally, the AS_PATH attribute is retained. This implies that, in transitive BGPsec, both the AS_PATH and BGPsec_PATH attributes will co-exist within the BGP UPDATE message.
+In transitive BGPsec, the format of the BGPsec_PATH attribute is reused.
 
-
-
+The AS_PATH is a mandatory path attribute in the legacy BGP UPDATE message. It is of fundamental importance to achieve transparent traversal of legacy BGP. The AS_PATH attribute is retained. This implies that, in transitive BGPsec, both the AS_PATH and BGPsec_PATH attributes will co-exist within the BGP UPDATE message.
 
 
 # Security Considerations
