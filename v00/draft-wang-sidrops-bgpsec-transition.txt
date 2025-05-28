@@ -16,11 +16,11 @@ Expires: 29 November 2025                                          Q. Li
 Abstract
 
    This document describes a means to facilitate the deployment of
-   BGPsec.  It modifies the BGPsec_PATH attribute to a transitive
-   attribute and then addresses some problems brought by this change.
-   It still aims to attest that every AS within the sequence of ASes
-   enumerated in the UPDATE message has explicitly authorized the
-   advertisement of the route.
+   BGPsec.  It modifies the non-transitive BGPsec_PATH attribute to a
+   transitive BGPsec_PATH attribute and addresses some problems this
+   modification brings.  It still aims to attest that every AS within
+   the sequence of ASes enumerated in the UPDATE message has explicitly
+   authorized the advertisement of the route.
 
 About This Document
 
@@ -70,29 +70,43 @@ Table of Contents
 
    1.  Introduction
      1.1.  Conventions and Definitions
-   2.  Gap Analysis
-   3.  Transitive BGPsec
-   4.  Security Considerations
-   5.  IANA Considerations
-   6.  References
-     6.1.  Normative References
-     6.2.  Informative References
+   2.  Transitive BGPsec
+   3.  Security Considerations
+   4.  IANA Considerations
+   5.  References
+     5.1.  Normative References
+     5.2.  Informative References
    Acknowledgments
    Authors' Addresses
 
 1.  Introduction
 
-   The Border Gateway Protocol (BGP) [RFC4271] lacks inherent security
-   mechanisms, especially for its Autonomous Systems (ASes) path and
-   origin prefix information, making it vulnerable to route leaks and
-   hijackings.
+   The Border Gateway Protocol (BGP) [RFC4271] is deficient in intrinsic
+   security mechanisms, particularly regarding the Autonomous Systems
+   (ASes) path information and origin prefix information.  As a result,
+   it is susceptible to route leaks and hijackings.
 
-   BGPsec, defined in [RFC8205], extends BGP to enhance security for AS
-   path information.  However, it employs an optional non-transitive BGP
-   path attribute to carry digital signatures, complicating incremental
-   deployment.
+   Traditional BGPsec, as defined in [RFC8205], extends BGP to fortify
+   the security of AS path information.  Nevertheless, traditional
+   BGPsec encounters challenges in achieving incremental deployment.  It
+   utilizes an optional non-transitive BGP path attribute to convey
+   digital signatures, thereby complicating incremental deployment.
 
-   This document aims to facilitate the deployment of BGPsec.
+   The principal objective of this document is to make BGPsec
+   incrementally deployable.  Driven by this aim, it modifies the
+   traditional BGPsec into transitive BGPsec.
+
+   There exist at least two obstacles to transforming BGPsec into
+   transitive BGPsec.  During the OPEN phase, BGPsec necessitates that
+   two BGPsec peers engage in the negotiation of BGPsec capability and
+   multiprotocol capability.  In the UPDATE phase, the BGPsec_PATH
+   attribute, being non-transitive, cannot traverse transparently across
+   the legacy BGP area.
+
+   The objective of this document is to facilitate the deployment of
+   BGPsec.  This document modifies the non-transitive BGPsec_PATH into
+   the transitive BGPsec_PATH and addresses the issues arising from this
+   modification.
 
 1.1.  Conventions and Definitions
 
@@ -102,32 +116,19 @@ Table of Contents
    BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
-2.  Gap Analysis
+2.  Transitive BGPsec
 
-   Traditional BGPsec is hard to achieve incremental deployment.  This
-   document mainly focuses on making BGPsec incrementally deployable.
-
-   It has at least two barriers to make BGPsec become transitive BGPsec.
-   In the OPEN phase, BGPsec requires two BGPsec peers to negotiate
-   BGPsec capability and multiprotocol capability.  In the UPDATE phase,
-   the BGPsec_Path attribute is a non-transitive attribute.
-
-   This document renders BGPsec transitive to facilitate the deployment
-   of BGPsec.
-
-3.  Transitive BGPsec
-
-4.  Security Considerations
+3.  Security Considerations
 
    TODO Security
 
-5.  IANA Considerations
+4.  IANA Considerations
 
    This document has no IANA actions.
 
-6.  References
+5.  References
 
-6.1.  Normative References
+5.1.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -147,7 +148,7 @@ Table of Contents
               Specification", RFC 8205, DOI 10.17487/RFC8205, September
               2017, <https://www.rfc-editor.org/rfc/rfc8205>.
 
-6.2.  Informative References
+5.2.  Informative References
 
    [RFC8374]  Sriram, K., Ed., "BGPsec Design Choices and Summary of
               Supporting Discussions", RFC 8374, DOI 10.17487/RFC8374,
