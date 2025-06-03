@@ -122,13 +122,13 @@ Taking the topology presented in {{fig-mix-deployment}} as an example:
 - AS F and AS G are areas where either BGPsec or transitive BGPsec can be deployed. That is to say, they have the option to implement either native BGPsec or transitive BGPsec.
 
 ~~~~~~
-+---------------------------+     +-----------------+     +-----------------+
-| +---+     +---+     +---+ |     | +---+     +---+ |     | +---+     +---+ |
-| | A | --> | B | --> | C | | --> | | D | --> | E | | --> | | F | --> | G | |
-| +---+     +---+     +---+ |     | +---+     +---+ |     | +---+     +---+ |
-|                           |     |                 |     |                 |
-|   BGPsec Continuous Area  |     | Non-BGPsec Area |     | (T-)BGPsec Area |
-+---------------------------+     +-----------------+     +-----------------+
++---+     +---+     +---+     +---+     +---+     +---+     +---+
+| A | --> | B | --> | C | --> | D | --> | E | --> | F | --> | G |
++---+     +---+     +---+     +---+     +---+     +---+     +---+
+|                       |     |             |     |             |
+|                       |     |             |     |             |
+\                       /     \             /     \             /
+ BGPsec Continuous Area      Non-BGPsec Area      (T-)BGPsec Area
 ~~~~~~
 {: #fig-mix-deployment title="Example: Mix Deployment Scenario"}
 
