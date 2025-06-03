@@ -60,7 +60,7 @@ informative:
 
 --- abstract
 
-This document describes a means to facilitate the deployment of BGPsec. It modifies the non-transitive BGPsec_PATH attribute to a transitive BGPsec_PATH attribute and addresses some problems this modification brings. It still aims to attest that every AS within the sequence of ASes enumerated in the UPDATE message has explicitly authorized the advertisement of the route.
+This document describes a means to facilitate the deployment of BGPsec. It tries to modify the non-transitive BGPsec_PATH attribute to a transitive BGPsec_PATH attribute and address some problems this modification brings. It still aims to attest that every AS within the sequence of ASes enumerated in the UPDATE message has explicitly authorized the advertisement of the route. However, it 
 
 --- middle
 
@@ -161,7 +161,11 @@ Transitive BGPsec also obeys most of the traditional BGPsec rules in processing 
 
 Unless the BGPsec_PATH is broken and the corresponding  BGPsec signature is missing, a BGPsec speaker MUST utilize the AS path information in the Secure_Path in most cases, as many as possible, where it would otherwise use the AS path information in the AS_PATH attribute.
 
-# Operational Considerations
+# Algorithms and Extensibility
+
+The algorithms and extensibility defined in {{Section 6 of RFC8205}} is applicable in transitive BGPsec.
+
+# Operations and Management Considerations
 
 TBD.
 
@@ -172,7 +176,7 @@ TODO Security
 
 # IANA Considerations
 
-This document has no IANA actions.
+TBD.
 
 
 --- back
