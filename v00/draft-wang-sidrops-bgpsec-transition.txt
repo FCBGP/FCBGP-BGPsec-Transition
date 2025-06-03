@@ -198,15 +198,15 @@ Table of Contents
    transitive BGPsec can be deployed.  That is to say, they have the
    option to implement either native BGPsec or transitive BGPsec.
 
-+---------------------------+     +-----------------+     +-----------------+
-| +---+     +---+     +---+ |     | +---+     +---+ |     | +---+     +---+ |
-| | A | --> | B | --> | C | | --> | | D | --> | E | | --> | | F | --> | G | |
-| +---+     +---+     +---+ |     | +---+     +---+ |     | +---+     +---+ |
-|                           |     |                 |     |                 |
-|   BGPsec Continuous Area  |     | Non-BGPsec Area |     | (T-)BGPsec Area |
-+---------------------------+     +-----------------+     +-----------------+
+   +---+     +---+     +---+     +---+     +---+     +---+     +---+
+   | A | --> | B | --> | C | --> | D | --> | E | --> | F | --> | G |
+   +---+     +---+     +---+     +---+     +---+     +---+     +---+
+   |                       |     |             |     |             |
+   |                       |     |             |     |             |
+   \                       /     \             /     \             /
+    BGPsec Continuous Area      Non-BGPsec Area      (T-)BGPsec Area
 
-              Figure 1: Example: Mix Deployment Scenario
+                 Figure 1: Example: Mix Deployment Scenario
 
    AS A is capable of negotiating the BGPsec Capability with AS B.  AS A
    disseminates a route prefix through a BGPsec UPDATE message to AS B.
