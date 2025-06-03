@@ -23,12 +23,12 @@
     google-i18n-address 3.1.1
     intervaltree 3.1.0
     Jinja2 3.1.6
-    lxml 5.3.0
+    lxml 5.3.1
     platformdirs 4.3.8
     pycountry 24.6.1
     PyYAML 6.0.2
     requests 2.32.3
-    setuptools 70.3.0
+    setuptools 80.9.0
     wcwidth 0.2.13
 -->
 <link href="draft-wang-sidrops-bgpsec-transition.xml" rel="alternate" type="application/rfc+xml">
@@ -1048,11 +1048,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">BGPsec Transition</td>
-<td class="right">May 2025</td>
+<td class="right">June 2025</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Xu, et al.</td>
-<td class="center">Expires 29 November 2025</td>
+<td class="center">Expires 5 December 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1065,12 +1065,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-wang-sidrops-bgpsec-transition-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-05-28" class="published">28 May 2025</time>
+<time datetime="2025-06-03" class="published">3 June 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-11-29">29 November 2025</time></dd>
+<dd class="expires"><time datetime="2025-12-05">5 December 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1127,7 +1127,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 29 November 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 5 December 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1172,29 +1172,46 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-bgpsec-update-messages" class="internal xref">BGPsec UPDATE Messages</a></p>
-</li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
-            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
-</li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
-            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
-</li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-references" class="internal xref">References</a></p>
 <ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.1">
-                <p id="section-toc.1-1.7.2.1.1"><a href="#section-7.1" class="auto internal xref">7.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.1">
+                <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="auto internal xref">4.1</a>.  <a href="#name-general-guidance" class="internal xref">General Guidance</a></p>
 </li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.2">
-                <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="auto internal xref">7.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.2">
+                <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="auto internal xref">4.2</a>.  <a href="#name-constructing-the-transitive" class="internal xref">Constructing the Transitive BGPsec_PATH Attribute</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.3">
+                <p id="section-toc.1-1.4.2.3.1"><a href="#section-4.3" class="auto internal xref">4.3</a>.  <a href="#name-processing-instructions-for" class="internal xref">Processing Instructions for Confederation Members</a></p>
 </li>
             </ul>
 </li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
+            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-processing-a-received-trans" class="internal xref">Processing a Received Transitive BGPsec UPDATE Message</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
+            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-operational-considerations" class="internal xref">Operational Considerations</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
+            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
+</li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
-            <p id="section-toc.1-1.8.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
-            <p id="section-toc.1-1.9.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-references" class="internal xref">References</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.1">
+                <p id="section-toc.1-1.9.2.1.1"><a href="#section-9.1" class="auto internal xref">9.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.2">
+                <p id="section-toc.1-1.9.2.2.1"><a href="#section-9.2" class="auto internal xref">9.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
+</li>
+            </ul>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
+            <p id="section-toc.1-1.10.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
+            <p id="section-toc.1-1.11.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1209,7 +1226,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <p id="section-1-2">Traditional BGPsec, as defined in <span>[<a href="#RFC8205" class="cite xref">RFC8205</a>]</span>, extends BGP to fortify the security of AS path information. Nevertheless, traditional BGPsec encounters challenges in achieving incremental deployment. It utilizes an optional non-transitive BGP path attribute to convey digital signatures, thereby complicating incremental deployment.<a href="#section-1-2" class="pilcrow">¶</a></p>
 <p id="section-1-3">The principal objective of this document is to make BGPsec incrementally deployable. Driven by this aim, it modifies the traditional BGPsec into transitive BGPsec.<a href="#section-1-3" class="pilcrow">¶</a></p>
 <p id="section-1-4">There exist at least two obstacles to transforming BGPsec into transitive BGPsec. During the OPEN phase, BGPsec necessitates that two BGPsec peers engage in the negotiation of BGPsec capability and multiprotocol capability. In the UPDATE phase, the BGPsec_PATH attribute, being non-transitive, cannot traverse transparently across the legacy BGP area.<a href="#section-1-4" class="pilcrow">¶</a></p>
-<p id="section-1-5">The objective of this document is to facilitate the deployment of BGPsec. This document modifies the non-transitive BGPsec_PATH into the transitive BGPsec_PATH and addresses the issues arising from this modification.<a href="#section-1-5" class="pilcrow">¶</a></p>
+<p id="section-1-5">The objective of this document is to facilitate the deployment of BGPsec with as minimal modifications as possible. This document modifies the non-transitive BGPsec_PATH into the transitive BGPsec_PATH and addresses the issues arising from this modification.<a href="#section-1-5" class="pilcrow">¶</a></p>
 <div id="conventions-and-definitions">
 <section id="section-1.1">
         <h3 id="name-conventions-and-definitions">
@@ -1219,6 +1236,23 @@ svg :is([fill="white"], [fill^="#fff"]) {
 "<span class="bcp14">MAY</span>", and "<span class="bcp14">OPTIONAL</span>" in this document are to be interpreted as
 described in BCP 14 <span>[<a href="#RFC2119" class="cite xref">RFC2119</a>]</span> <span>[<a href="#RFC8174" class="cite xref">RFC8174</a>]</span> when, and only when, they
 appear in all capitals, as shown here.<a href="#section-1.1-1" class="pilcrow">¶</a></p>
+<span class="break"></span><dl class="dlParallel" id="section-1.1-2">
+          <dt id="section-1.1-2.1">BGP:</dt>
+          <dd style="margin-left: 1.5em" id="section-1.1-2.2">
+            <p id="section-1.1-2.2.1">BGP, native BGP, and/or legacy BGP are the BGP version 4 defined in <span>[<a href="#RFC4271" class="cite xref">RFC4271</a>]</span> and/or multiprotocol BGP defined in <span>[<a href="#RFC4760" class="cite xref">RFC4760</a>]</span>. It does not support BGPsec or traditional BGPsec.<a href="#section-1.1-2.2.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-1.1-2.3">BGPsec:</dt>
+          <dd style="margin-left: 1.5em" id="section-1.1-2.4">
+            <p id="section-1.1-2.4.1">BGPsec, native BGPsec, and/or traditional BGPsec are the BGPsec approach defined in <span>[<a href="#RFC8205" class="cite xref">RFC8205</a>]</span>.<a href="#section-1.1-2.4.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-1.1-2.5">T-BGPsec:</dt>
+          <dd style="margin-left: 1.5em" id="section-1.1-2.6">
+            <p id="section-1.1-2.6.1">T-BGPsec or transitive BGPsec means that the transitive BGPsec approach is defined in this document.<a href="#section-1.1-2.6.1" class="pilcrow">¶</a></p>
+</dd>
+        <dd class="break"></dd>
+</dl>
 </section>
 </div>
 </section>
@@ -1229,7 +1263,7 @@ appear in all capitals, as shown here.<a href="#section-1.1-1" class="pilcrow">�
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-bgpsec-negotiation" class="section-name selfRef">BGPsec Negotiation</a>
       </h2>
 <p id="section-2-1">As stipulated in <span><a href="https://rfc-editor.org/rfc/rfc8205#section-2.2" class="relref">Section 2.2</a> of [<a href="#RFC8205" class="cite xref">RFC8205</a>]</span>, for a BGPsec router to successfully negotiate with its peer, it must transmit the BGPsec Capabilities that are in accordance with those of its peers in the BGP OPEN message. However, the transitive path attribute does not require the negotiation of capabilities with peers. In the event that a peer fails to comprehend the transitive path attribute, it merely forwards it to downstream BGP speakers.<a href="#section-2-1" class="pilcrow">¶</a></p>
-<p id="section-2-2">In transitive BGPsec, there is no requirement to negotiate the BGPsec capability. However, a BGPsec router is still obligated to inform its peer that it has support for transitive BGPsec. In this scenario, the reuse of the BGPsec capability is essential. Nevertheless, there is no requirement to utilize the Dir field and the AFI field. Transitive BGPsec reuses traditional BGPsec capability format. Consequently, the version field of the BGPsec capability must be updated to 1, while the remaining fields should be filled with 0.<a href="#section-2-2" class="pilcrow">¶</a></p>
+<p id="section-2-2">In transitive BGPsec, there is no requirement to negotiate the BGPsec capability. However, a BGPsec router is still obligated to inform its peer that it has support for transitive BGPsec. In this scenario, the reuse of the BGPsec capability is essential. Nevertheless, there is no requirement to utilize the Dir field and the AFI field. Transitive BGPsec reuses the traditional BGPsec capability format. Consequently, the version field of the BGPsec capability must be updated to 1, while the remaining fields should be filled with 0.<a href="#section-2-2" class="pilcrow">¶</a></p>
 <p id="section-2-3">If a BGPsec router negotiates with its peers and the version value of the BGPsec capability is set to 1, this implies that the router supports transitive BGPsec. In this scenario, the BGPsec capability serves two purposes. Firstly, it notifies the peer that this particular BGP speaker is capable of supporting transitive BGPsec. Secondly, it differentiates transitive BGPsec from traditional BGPsec to ensure compatibility.<a href="#section-2-3" class="pilcrow">¶</a></p>
 <p id="section-2-4">For the sake of compatibility, this document designates that it still supports traditional BGPsec in this version.<a href="#section-2-4" class="pilcrow">¶</a></p>
 </section>
@@ -1239,7 +1273,7 @@ appear in all capitals, as shown here.<a href="#section-1.1-1" class="pilcrow">�
       <h2 id="name-the-bgpsec_path-attribute">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-the-bgpsec_path-attribute" class="section-name selfRef">The BGPsec_PATH Attribute</a>
       </h2>
-<p id="section-3-1">In transitive BGPsec, all the packet formats of the BGPsec_PATH attribute are reused, including the BGPsec_PATH attribute format, Secure_Path format, Secure_Path Segment format, Signature_Block format, and Signature_Block Segment format.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-1">Given that the objective is to expedite the deployment of BGPsec, this document will effectuate the least possible modifications to BGPsec. Consequently, all of the packet formats of the BGPsec_PATH attribute defined in <span>[<a href="#RFC8205" class="cite xref">RFC8205</a>]</span> are reutilized in the establishment of transitive BGPsec, including the BGPsec_PATH attribute format, Secure_Path format, Secure_Path Segment format, Signature_Block format, and Signature_Block Segment format.<a href="#section-3-1" class="pilcrow">¶</a></p>
 <p id="section-3-2">In traditional BGPsec, the BGPsec_PATH attribute is an optional non-transitive BGP path attribute. However, within this document, the BGPsec_PATH attribute is defined as an optional transitive BGP path attribute. It is important to note that the attribute code should remain the same as that of the traditional BGPsec_PATH attribute.<a href="#section-3-2" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1248,34 +1282,117 @@ appear in all capitals, as shown here.<a href="#section-1.1-1" class="pilcrow">�
       <h2 id="name-bgpsec-update-messages">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-bgpsec-update-messages" class="section-name selfRef">BGPsec UPDATE Messages</a>
       </h2>
-<p id="section-4-1">The AS_PATH is a mandatory path attribute in the legacy BGP UPDATE message. It is of fundamental importance to achieve transparent traversal of legacy BGP. The AS_PATH attribute is retained. This implies that, in transitive BGPsec, both the AS_PATH and BGPsec_PATH attributes will co-exist within the BGP UPDATE message.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<div id="general-guidance">
+<section id="section-4.1">
+        <h3 id="name-general-guidance">
+<a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-general-guidance" class="section-name selfRef">General Guidance</a>
+        </h3>
+<p id="section-4.1-1">Transitive BGPsec obeys the traditional BGPsec rules except that the AS_PATH is mutually exclusive with the BGPsec_PATH attribute.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
+<p id="section-4.1-2">The AS_PATH is a mandatory path attribute in the legacy BGP UPDATE message. It is of fundamental importance to achieve transparent traversal of legacy BGP. In the event that the subsequent BGP speakers do not support BGPsec, the traditional BGPsec will revert to BGP. Moreover, it will restore the AS_PATH from the BGPsec_PATH.<a href="#section-4.1-2" class="pilcrow">¶</a></p>
+<p id="section-4.1-3">The AS_PATH attribute is retained in transitive BGPsec; both the AS_PATH and BGPsec_PATH attributes will co-exist within the BGP UPDATE message. It will simplify the operations requiring the AS_PATH attribute and transparently transit over legacy BGP speakers. The processing of AS_PATH is the same as in the legacy BGP.<a href="#section-4.1-3" class="pilcrow">¶</a></p>
+<p id="section-4.1-4">The AS_SET and AS_CONFED_SET have been deprecated in <span>[<a href="#RFC9774" class="cite xref">RFC9774</a>]</span> in BGP, so transitive BGPsec would not consider this scenario where AS_SET or AS_CONFED_SET co-exists with the BGPsec_PATH attribute.<a href="#section-4.1-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="constructing-the-transitive-bgpsecpath-attribute">
+<section id="section-4.2">
+        <h3 id="name-constructing-the-transitive">
+<a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-constructing-the-transitive" class="section-name selfRef">Constructing the Transitive BGPsec_PATH Attribute</a>
+        </h3>
+<p id="section-4.2-1">The generation of the transitive BGPsec_PATH attribute is similar to traditional BGPsec. The transit bit is set as transitive to render this attribute as a transitive path attribute.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
+<p id="section-4.2-2">If the ASes in the BGPsec_PATH attribute are the same as those in the AS_PATH attribute, i.e., the BGPsec_PATH is complete, the signature generation follows the traditional BGPsec. Otherwise, in the BGPsec_PATH broken case, where some BGP speakers don't support transitive BGPsec, the digital signature is computed as follows:<a href="#section-4.2-2" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-4.2-3.1">
+            <p id="section-4.2-3.1.1">In order to construct the digital signature for Signature Segment N (that is produced by the current AS), first construct the sequence of octets to be hashed as shown in <a href="#fig-sequence-of-octets-to-be-hashed" class="auto internal xref">Figure 1</a>. This sequence of octets includes all the data that the Nth AS attests to by adding its digital signature in the UPDATE message that is being forwarded to a BGPsec speaker in the (N+1)th AS.<a href="#section-4.2-3.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-4.2-3.2">
+            <p id="section-4.2-3.2.1">The elements in this sequence <span class="bcp14">MUST</span> be ordered exactly as shown in <a href="#fig-sequence-of-octets-to-be-hashed" class="auto internal xref">Figure 1</a>. The 'Target AS Number' is the AS to whom the transitive BGPsec speaker intends to send the UPDATE message.  (Note that the 'Target AS Number' is the AS number announced by the peer in the OPEN message of the BGP session within which the UPDATE message is sent.)  The Secure_Path Segment N is obtained from the BGPsec_PATH attribute. The Previous AS Number N-1 is obtained from the AS_PATH attribute, which is the AS number of the previous hop. Finally, the Address Family Identifier (AFI), Subsequent Address Family Identifier (SAFI), and NLRI fields are obtained from the MP_REACH_NLRI attribute <span>[<a href="#RFC4760" class="cite xref">RFC4760</a>]</span>. Additionally, in the Prefix field within the NLRI field (see <span><a href="https://rfc-editor.org/rfc/rfc4760#section-5" class="relref">Section 5</a> of [<a href="#RFC4760" class="cite xref">RFC4760</a>]</span>), all of the trailing bits <span class="bcp14">MUST</span> be set to 0 when constructing this sequence.<a href="#section-4.2-3.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-4.2-3.3">
+            <p id="section-4.2-3.3.1">Apply to this octet sequence (in <a href="#fig-sequence-of-octets-to-be-hashed" class="auto internal xref">Figure 1</a>) the digest algorithm (for the algorithm suite of this Signature_Block) to obtain a digest value.<a href="#section-4.2-3.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-4.2-3.4">
+            <p id="section-4.2-3.4.1">Apply to this digest value the signature algorithm (for the algorithm suite of this Signature_Block) to obtain the digital signature.<a href="#section-4.2-3.4.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+<span id="name-sequence-of-octets-to-be-ha"></span><div id="fig-sequence-of-octets-to-be-hashed">
+<figure id="figure-1">
+          <div class="alignLeft art-text artwork" id="section-4.2-4.1">
+<pre>
+   +------------------------------------+
+   | Target AS Number                   |
+   +------------------------------------+
+   | Secure_Path Segment: N             |
+   +------------------------------------+
+   | Previous AS Number: N-1            |
+   +------------------------------------+
+   | Algorithm Suite Identifier         |
+   +------------------------------------+
+   | AFI                                |
+   +------------------------------------+
+   | SAFI                               |
+   +------------------------------------+
+   | NLRI                               |
+   +------------------------------------+
+</pre>
+</div>
+<figcaption><a href="#figure-1" class="selfRef">Figure 1</a>:
+<a href="#name-sequence-of-octets-to-be-ha" class="selfRef">Sequence of Octets to Be Hashed</a>
+          </figcaption></figure>
+</div>
+</section>
+</div>
+<div id="processing-instructions-for-confederation-members">
+<section id="section-4.3">
+        <h3 id="name-processing-instructions-for">
+<a href="#section-4.3" class="section-number selfRef">4.3. </a><a href="#name-processing-instructions-for" class="section-name selfRef">Processing Instructions for Confederation Members</a>
+        </h3>
+<p id="section-4.3-1">It is <span class="bcp14">REQUIRED</span> NOT to utilize the transitive BGPsec approach within AS confederations. In other words, within an AS confederation, it <span class="bcp14">MUST</span> employ legacy BGP.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+</section>
+</div>
+<div id="processing-a-received-transitive-bgpsec-update-message">
+<section id="section-5">
+      <h2 id="name-processing-a-received-trans">
+<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-processing-a-received-trans" class="section-name selfRef">Processing a Received Transitive BGPsec UPDATE Message</a>
+      </h2>
+<p id="section-5-1">Transitive BGPsec also obeys most of the traditional BGPsec rules in processing a received transitive BGPsec UPDATE message.<a href="#section-5-1" class="pilcrow">¶</a></p>
+<p id="section-5-2">Unless the BGPsec_PATH is broken and the corresponding  BGPsec signature is missing, a BGPsec speaker <span class="bcp14">MUST</span> utilize the AS path information in the Secure_Path in most cases, as many as possible, where it would otherwise use the AS path information in the AS_PATH attribute.<a href="#section-5-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="operational-considerations">
+<section id="section-6">
+      <h2 id="name-operational-considerations">
+<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-operational-considerations" class="section-name selfRef">Operational Considerations</a>
+      </h2>
+<p id="section-6-1">TBD.<a href="#section-6-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="security-considerations">
-<section id="section-5">
+<section id="section-7">
       <h2 id="name-security-considerations">
-<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-5-1">TODO Security<a href="#section-5-1" class="pilcrow">¶</a></p>
+<p id="section-7-1">TODO Security<a href="#section-7-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana-considerations">
-<section id="section-6">
+<section id="section-8">
       <h2 id="name-iana-considerations">
-<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
+<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
-<p id="section-6-1">This document has no IANA actions.<a href="#section-6-1" class="pilcrow">¶</a></p>
+<p id="section-8-1">This document has no IANA actions.<a href="#section-8-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-combined-references">
-<section id="section-7">
+<section id="section-9">
       <h2 id="name-references">
-<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-references" class="section-name selfRef">References</a>
+<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-references" class="section-name selfRef">References</a>
       </h2>
 <div id="sec-normative-references">
-<section id="section-7.1">
+<section id="section-9.1">
         <h3 id="name-normative-references">
-<a href="#section-7.1" class="section-number selfRef">7.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+<a href="#section-9.1" class="section-number selfRef">9.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
         </h3>
 <dl class="references">
 <dt id="RFC2119">[RFC2119]</dt>
@@ -1286,21 +1403,29 @@ appear in all capitals, as shown here.<a href="#section-1.1-1" class="pilcrow">�
         <dd>
 <span class="refAuthor">Rekhter, Y., Ed.</span>, <span class="refAuthor">Li, T., Ed.</span>, and <span class="refAuthor">S. Hares, Ed.</span>, <span class="refTitle">"A Border Gateway Protocol 4 (BGP-4)"</span>, <span class="seriesInfo">RFC 4271</span>, <span class="seriesInfo">DOI 10.17487/RFC4271</span>, <time datetime="2006-01" class="refDate">January 2006</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc4271">https://www.rfc-editor.org/rfc/rfc4271</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="RFC4760">[RFC4760]</dt>
+        <dd>
+<span class="refAuthor">Bates, T.</span>, <span class="refAuthor">Chandra, R.</span>, <span class="refAuthor">Katz, D.</span>, and <span class="refAuthor">Y. Rekhter</span>, <span class="refTitle">"Multiprotocol Extensions for BGP-4"</span>, <span class="seriesInfo">RFC 4760</span>, <span class="seriesInfo">DOI 10.17487/RFC4760</span>, <time datetime="2007-01" class="refDate">January 2007</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc4760">https://www.rfc-editor.org/rfc/rfc4760</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="RFC8174">[RFC8174]</dt>
         <dd>
 <span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8205">[RFC8205]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Lepinski, M., Ed.</span> and <span class="refAuthor">K. Sriram, Ed.</span>, <span class="refTitle">"BGPsec Protocol Specification"</span>, <span class="seriesInfo">RFC 8205</span>, <span class="seriesInfo">DOI 10.17487/RFC8205</span>, <time datetime="2017-09" class="refDate">September 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8205">https://www.rfc-editor.org/rfc/rfc8205</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9774">[RFC9774]</dt>
+      <dd>
+<span class="refAuthor">Kumari, W.</span>, <span class="refAuthor">Sriram, K.</span>, <span class="refAuthor">Hannachi, L.</span>, and <span class="refAuthor">J. Haas</span>, <span class="refTitle">"Deprecation of AS_SET and AS_CONFED_SET in BGP"</span>, <span class="seriesInfo">RFC 9774</span>, <span class="seriesInfo">DOI 10.17487/RFC9774</span>, <time datetime="2025-05" class="refDate">May 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9774">https://www.rfc-editor.org/rfc/rfc9774</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
 </div>
 <div id="sec-informative-references">
-<section id="section-7.2">
+<section id="section-9.2">
         <h3 id="name-informative-references">
-<a href="#section-7.2" class="section-number selfRef">7.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
+<a href="#section-9.2" class="section-number selfRef">9.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
 <dt id="RFC8374">[RFC8374]</dt>
