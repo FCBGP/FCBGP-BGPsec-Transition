@@ -112,7 +112,8 @@ In native BGPsec, the BGPsec_PATH attribute is an optional non-transitive BGP pa
 
 ## Updating and Receiving BGP UPDATE message
 
-It is unnecessary to elaborate on the processing of the BGP UPDATE messages.
+<!-- It is unnecessary to elaborate on the processing of the BGP UPDATE messages. -->
+TBD.
 
 # Question: Compatibility with Native BGPsec
 
