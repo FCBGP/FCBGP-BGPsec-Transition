@@ -116,9 +116,10 @@ TBD.
 # Question: Compatibility with Native BGPsec
 
 Taking the topology presented in {{fig-mix-deployment}} as an example:
+
 - AS A, AS B, and AS C are regions with continuous native BGPsec deployments. Specifically, AS A, AS B, and AS C implement native BGPsec. Additionally, AS C also implements transitive BGPsec.
 - AS D and AS E are areas with legacy BGP deployments. These areas do not implement native BGPsec, transitive BGPsec, or any other related security mechanisms.
-- AS F deploys native BGPsec.
+- AS F deploys native BGPsec or transitive BGPsec.
 
 ~~~~~~
 +---+     +---+     +---+     +---+     +---+     +---+
