@@ -6,7 +6,7 @@ category: std
 docname: draft-wang-sidrops-bgpsec-transition-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
-date: 
+date:
 consensus: true
 v: 3
 area: ""
@@ -60,7 +60,7 @@ informative:
 
 --- abstract
 
-This document elaborates on the reasons why it is unfeasible to reconstruct the native-BGPsec as a transitive approach, such that a BGP update with a correctly signed BGPsec_PATH attribute can traverse legacy areas and afterwards it can still be properly processed by subsequent native-BGPsec speakers. 
+This document elaborates on the reasons why it is unfeasible to reconstruct the native-BGPsec as a transitive approach, such that a BGP update with a correctly signed BGPsec_PATH attribute can traverse legacy areas and afterwards it can still be properly processed by subsequent native-BGPsec speakers.
 
 
 --- middle
@@ -69,11 +69,11 @@ This document elaborates on the reasons why it is unfeasible to reconstruct the 
 
 The Border Gateway Protocol (BGP) {{RFC4271}} is vulnerable to route leaks and hijacking attacks.
 
-Native BGPsec, as defined in {{RFC8205}}, extends BGP to enhance the security of AS path information. Nevertheless, native BGPsec encounters challenges in achieving incremental deployment. It utilizes an optional non-transitive BGP path attribute to deliver digital signatures. Yet, when BGPsec messages traverse BGPsec-unemployed, the last BGPsec-aware router falls back to native BGP protocol to ensure backward compatibility, by completely removing the BGPsec-related path attribute (i.e., the BGPsec_PATH attribute). 
+Native BGPsec, as defined in {{RFC8205}}, extends BGP to enhance the security of AS path information. Nevertheless, native BGPsec encounters challenges in achieving incremental deployment. It utilizes an optional non-transitive BGP path attribute to deliver digital signatures. Yet, when BGPsec messages traverse BGPsec-unemployed, the last BGPsec-aware router falls back to native BGP protocol to ensure backward compatibility, by completely removing the BGPsec-related path attribute (i.e., the BGPsec_PATH attribute).
 
-The principal objectives are to make BGPsec transit transparently over BGPsec-unemployed areas, instead of completely falling back to legacy BGP. 
+The principal objectives are to make BGPsec transit transparently over BGPsec-unemployed areas, instead of completely falling back to legacy BGP.
 
-In order to transit across areas where BGPsec has not been deployed, the most straightforward approach is to transform the native BGPsec into transitive BGPsec. However, this document will illustrate that it is unfeasible to render BGPsec as a transitive approach for traversing undeployed areas while still being compatible with native BGPsec. In other words, transitive BGPsec is not compatible with BGPsec. 
+In order to transit across areas where BGPsec has not been deployed, the most straightforward approach is to transform the native BGPsec into transitive BGPsec. However, this document will illustrate that it is unfeasible to render BGPsec as a transitive approach for traversing undeployed areas while still being compatible with native BGPsec. In other words, transitive BGPsec is not compatible with BGPsec.
 
 ## Conventions and Definitions
 
@@ -118,7 +118,7 @@ TBD.
 Taking the topology presented in {{fig-mix-deployment}} as an example:
 - AS A, AS B, and AS C are regions with continuous native BGPsec deployments. Specifically, AS A, AS B, and AS C implement native BGPsec. Additionally, AS C also implements transitive BGPsec.
 - AS D and AS E are areas with legacy BGP deployments. These areas do not implement native BGPsec, transitive BGPsec, or any other related security mechanisms.
-- AS F deploys native BGPsec. 
+- AS F deploys native BGPsec.
 
 ~~~~~~
 +---+     +---+     +---+     +---+     +---+     +---+
@@ -127,7 +127,7 @@ Taking the topology presented in {{fig-mix-deployment}} as an example:
 |                       |     |             |       |
 |                       |     |             |       |
 \                       /     \             /       |
- BGPsec Continuous Area      Non-BGPsec Area      transitive/native BGPsec
+ BGPsec Continuous Area      Non-BGPsec Area      BGPsec/T-BGPsec
 ~~~~~~
 {: #fig-mix-deployment title="Example: Mix Deployment Scenario"}
 
@@ -139,22 +139,18 @@ AS C obtains the BGPsec UPDATE message from AS B. AS C validates the BGPsec UPDA
 
 AS D and AS E refrain from processing this transitive BGPsec message and instead forward it to the subsequent hop.
 
-AS F receives this transitive BGPsec UPDATE message from AS E. Because AS F deploys the native BGPsec, it will conduct a syntax check. However, the verification will fail because the message is not correctly formatted as a BGPsec UPDATE message. 
+AS F receives this transitive BGPsec UPDATE message from AS E. Because AS F deploys the native BGPsec, it will conduct a syntax check. However, the verification will fail because the message is not correctly formatted as a BGPsec UPDATE message.
 
-In summary, any native BGPsec speaker on the downstream of an undeployed region cannot properly process the transitive BGPsec UPDATE messages sent by upstream ASes. 
+In summary, any native BGPsec speaker on the downstream of an undeployed region cannot properly process the transitive BGPsec UPDATE messages sent by upstream ASes.
 
-Thus, we conclude that the transitive BGPsec is a viable option to make BGPsec incrementally deployable. 
+Thus, we conclude that the transitive BGPsec is a viable option to make BGPsec incrementally deployable.
 
-A new intermediate protocol is required in the transition to full BGPsec deployment.  
+A new intermediate protocol is required in the transition to full BGPsec deployment.
 
-
-# Operational Considerations
-
-TBD.
 
 # Security Considerations
 
-TODO Security
+There are no security considerations in this document.
 
 
 # IANA Considerations
