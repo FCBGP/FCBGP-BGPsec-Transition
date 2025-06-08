@@ -4,7 +4,7 @@
 
 Secure Inter-Domain Routing                                        K. Xu
 Internet-Draft                                                   X. Wang
-Intended status: Standards Track                                  Z. Liu
+Intended status: Informational                                    Z. Liu
 Expires: 10 December 2025                                          Q. Li
                                                      Tsinghua University
                                                              8 June 2025
