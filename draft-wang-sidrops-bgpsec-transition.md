@@ -144,7 +144,7 @@ AS F receives this transitive BGPsec UPDATE message from AS E. Because AS F depl
 
 In summary, any native BGPsec speaker on the downstream of an undeployed region cannot properly process the transitive BGPsec UPDATE messages sent by upstream ASes.
 
-Thus, we conclude that the transitive BGPsec is a viable option to make BGPsec incrementally deployable.
+Thus, we conclude that the transitive BGPsec is not a viable option to make BGPsec incrementally deployable.
 
 A new intermediate protocol is required in the transition to full BGPsec deployment.
 
