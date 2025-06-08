@@ -193,7 +193,7 @@ Table of Contents
       do not implement native BGPsec, transitive BGPsec, or any other
       related security mechanisms.
 
-   *  AS F deploys native BGPsec or transitive BGPsec.
+   *  AS F deploys native BGPsec.
 
    +---+     +---+     +---+     +---+     +---+     +---+
    | A | --> | B | --> | C | --> | D | --> | E | --> | F | --> ...
@@ -201,7 +201,7 @@ Table of Contents
    |                       |     |             |       |
    |                       |     |             |       |
    \                       /     \             /       |
-    BGPsec Continuous Area      Non-BGPsec Area      BGPsec/T-BGPsec
+    BGPsec Continuous Area      Non-BGPsec Area      BGPsec
 
                  Figure 1: Example: Mix Deployment Scenario
 
