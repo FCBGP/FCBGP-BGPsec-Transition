@@ -7,6 +7,8 @@ Internet-Draft                                                   X. Wang
 Intended status: Informational                                    Z. Liu
 Expires: 10 December 2025                                          Q. Li
                                                      Tsinghua University
+                                                                  Y. Guo
+                                                 Zhongguancun Laboratory
                                                              8 June 2025
 
 
@@ -291,27 +293,24 @@ Authors' Addresses
 
    Ke Xu
    Tsinghua University
-   Beijing
-   China
    Email: xuke@tsinghua.edu.cn
 
 
    Xiaoliang Wang
    Tsinghua University
-   Beijing
-   China
    Email: wangxiaoliang0623@foxmail.com
 
 
    Zhuotao Liu
    Tsinghua University
-   Beijing
-   China
    Email: zhuotaoliu@tsinghua.edu.cn
 
 
    Qi Li
    Tsinghua University
-   Beijing
-   China
    Email: qli01@tsinghua.edu.cn
+
+
+   Yangfei Guo
+   Zhongguancun Laboratory
+   Email: guoyangfei@zgclab.edu.cn
