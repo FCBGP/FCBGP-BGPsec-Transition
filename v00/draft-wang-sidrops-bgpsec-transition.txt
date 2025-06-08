@@ -231,8 +231,8 @@ Table of Contents
    undeployed region cannot properly process the transitive BGPsec
    UPDATE messages sent by upstream ASes.
 
-   Thus, we conclude that the transitive BGPsec is a viable option to
-   make BGPsec incrementally deployable.
+   Thus, we conclude that the transitive BGPsec is not a viable option
+   to make BGPsec incrementally deployable.
 
    A new intermediate protocol is required in the transition to full
    BGPsec deployment.
