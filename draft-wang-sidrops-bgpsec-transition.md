@@ -1,7 +1,7 @@
 ---
 title: "Transition to Full BGPsec Deployment: Transitive-BGPsec is Incompatible with BGPsec"
 abbrev: "BGPsec Transition"
-category: std
+category: info
 
 docname: draft-wang-sidrops-bgpsec-transition-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
