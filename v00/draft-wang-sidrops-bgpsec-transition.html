@@ -1288,13 +1288,21 @@ appear in all capitals, as shown here.<a href="#section-1.1-1" class="pilcrow">�
       <h2 id="name-question-compatibility-with">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-question-compatibility-with" class="section-name selfRef">Question: Compatibility with Native BGPsec</a>
       </h2>
-<p id="section-3-1">Taking the topology presented in <a href="#fig-mix-deployment" class="auto internal xref">Figure 1</a> as an example:
-- AS A, AS B, and AS C are regions with continuous native BGPsec deployments. Specifically, AS A, AS B, and AS C implement native BGPsec. Additionally, AS C also implements transitive BGPsec.
-- AS D and AS E are areas with legacy BGP deployments. These areas do not implement native BGPsec, transitive BGPsec, or any other related security mechanisms.
-- AS F deploys native BGPsec.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-1">Taking the topology presented in <a href="#fig-mix-deployment" class="auto internal xref">Figure 1</a> as an example:<a href="#section-3-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-3-2.1">
+          <p id="section-3-2.1.1">AS A, AS B, and AS C are regions with continuous native BGPsec deployments. Specifically, AS A, AS B, and AS C implement native BGPsec. Additionally, AS C also implements transitive BGPsec.<a href="#section-3-2.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-3-2.2">
+          <p id="section-3-2.2.1">AS D and AS E are areas with legacy BGP deployments. These areas do not implement native BGPsec, transitive BGPsec, or any other related security mechanisms.<a href="#section-3-2.2.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-3-2.3">
+          <p id="section-3-2.3.1">AS F deploys native BGPsec or transitive BGPsec.<a href="#section-3-2.3.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
 <span id="name-example-mix-deployment-scen"></span><div id="fig-mix-deployment">
 <figure id="figure-1">
-        <div class="alignLeft art-text artwork" id="section-3-2.1">
+        <div class="alignLeft art-text artwork" id="section-3-3.1">
 <pre>
 +---+     +---+     +---+     +---+     +---+     +---+
 | A | --&gt; | B | --&gt; | C | --&gt; | D | --&gt; | E | --&gt; | F | --&gt; ...
@@ -1309,14 +1317,14 @@ appear in all capitals, as shown here.<a href="#section-1.1-1" class="pilcrow">�
 <a href="#name-example-mix-deployment-scen" class="selfRef">Example: Mix Deployment Scenario</a>
         </figcaption></figure>
 </div>
-<p id="section-3-3">AS A is capable of negotiating the BGPsec Capability with AS B. AS A disseminates a route prefix through a BGPsec UPDATE message to AS B.<a href="#section-3-3" class="pilcrow">¶</a></p>
-<p id="section-3-4">AS B can negotiate the BGPsec Capability independently with both AS A and AS C. It receives the BGPsec UPDATE message from AS A and validates it in accordance with the BGPsec specification. Subsequently, it modifies the BGPsec UPDATE message by incorporating its own information and forwards it to AS C.<a href="#section-3-4" class="pilcrow">¶</a></p>
-<p id="section-3-5">AS C obtains the BGPsec UPDATE message from AS B. AS C validates the BGPsec UPDATE message and makes the necessary modifications. In this scenario, because AS D is a legacy AS, AS C converts this message into a transitive BGPsec UPDATE message.<a href="#section-3-5" class="pilcrow">¶</a></p>
-<p id="section-3-6">AS D and AS E refrain from processing this transitive BGPsec message and instead forward it to the subsequent hop.<a href="#section-3-6" class="pilcrow">¶</a></p>
-<p id="section-3-7">AS F receives this transitive BGPsec UPDATE message from AS E. Because AS F deploys the native BGPsec, it will conduct a syntax check. However, the verification will fail because the message is not correctly formatted as a BGPsec UPDATE message.<a href="#section-3-7" class="pilcrow">¶</a></p>
-<p id="section-3-8">In summary, any native BGPsec speaker on the downstream of an undeployed region cannot properly process the transitive BGPsec UPDATE messages sent by upstream ASes.<a href="#section-3-8" class="pilcrow">¶</a></p>
-<p id="section-3-9">Thus, we conclude that the transitive BGPsec is a viable option to make BGPsec incrementally deployable.<a href="#section-3-9" class="pilcrow">¶</a></p>
-<p id="section-3-10">A new intermediate protocol is required in the transition to full BGPsec deployment.<a href="#section-3-10" class="pilcrow">¶</a></p>
+<p id="section-3-4">AS A is capable of negotiating the BGPsec Capability with AS B. AS A disseminates a route prefix through a BGPsec UPDATE message to AS B.<a href="#section-3-4" class="pilcrow">¶</a></p>
+<p id="section-3-5">AS B can negotiate the BGPsec Capability independently with both AS A and AS C. It receives the BGPsec UPDATE message from AS A and validates it in accordance with the BGPsec specification. Subsequently, it modifies the BGPsec UPDATE message by incorporating its own information and forwards it to AS C.<a href="#section-3-5" class="pilcrow">¶</a></p>
+<p id="section-3-6">AS C obtains the BGPsec UPDATE message from AS B. AS C validates the BGPsec UPDATE message and makes the necessary modifications. In this scenario, because AS D is a legacy AS, AS C converts this message into a transitive BGPsec UPDATE message.<a href="#section-3-6" class="pilcrow">¶</a></p>
+<p id="section-3-7">AS D and AS E refrain from processing this transitive BGPsec message and instead forward it to the subsequent hop.<a href="#section-3-7" class="pilcrow">¶</a></p>
+<p id="section-3-8">AS F receives this transitive BGPsec UPDATE message from AS E. Because AS F deploys the native BGPsec, it will conduct a syntax check. However, the verification will fail because the message is not correctly formatted as a BGPsec UPDATE message.<a href="#section-3-8" class="pilcrow">¶</a></p>
+<p id="section-3-9">In summary, any native BGPsec speaker on the downstream of an undeployed region cannot properly process the transitive BGPsec UPDATE messages sent by upstream ASes.<a href="#section-3-9" class="pilcrow">¶</a></p>
+<p id="section-3-10">Thus, we conclude that the transitive BGPsec is a viable option to make BGPsec incrementally deployable.<a href="#section-3-10" class="pilcrow">¶</a></p>
+<p id="section-3-11">A new intermediate protocol is required in the transition to full BGPsec deployment.<a href="#section-3-11" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="security-considerations">
