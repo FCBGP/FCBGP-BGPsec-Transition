@@ -26,27 +26,23 @@ author:
   -
       fullname: Ke Xu
       org: Tsinghua University
-      city: Beijing
-      country: China
       email: xuke@tsinghua.edu.cn
   -
       fullname: Xiaoliang Wang
       org: Tsinghua University
-      city: Beijing
-      country: China
       email: wangxiaoliang0623@foxmail.com
   -
       fullname: Zhuotao Liu
       org: Tsinghua University
-      city: Beijing
-      country: China
       email: zhuotaoliu@tsinghua.edu.cn
   -
       fullname: Qi Li
       org: Tsinghua University
-      city: Beijing
-      country: China
       email: qli01@tsinghua.edu.cn
+  -
+      fullname: Yangfei Guo
+      org: Zhongguancun Laboratory
+      email: guoyangfei@zgclab.edu.cn
 
 normative:
     RFC4271:   # A Border Gateway Protocol 4 (BGP-4)
