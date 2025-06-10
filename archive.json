@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-08T01:13:06.405780+00:00",
+  "timestamp": "2025-06-10T01:08:08.478649+00:00",
   "repo": "FCBGP/BGPsec-Transition",
   "labels": [
     {
@@ -75,6 +75,34 @@
       "mergedBy": "BasilGuo",
       "mergeCommit": {
         "oid": "10403ccca6fdee3f40b34a815f07299d514a9c3d"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 2,
+      "id": "PR_kwDOOlTxB86ZkkXF",
+      "title": "publish: V00",
+      "url": "https://github.com/FCBGP/BGPsec-Transition/pull/2",
+      "state": "MERGED",
+      "author": "BasilGuo",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-06-08T09:36:20Z",
+      "updatedAt": "2025-06-08T09:37:05Z",
+      "baseRepository": "FCBGP/BGPsec-Transition",
+      "baseRefName": "main",
+      "baseRefOid": "1cb2d99692b01f6224c5b649f0da4b8ee7c65096",
+      "headRepository": "FCBGP/BGPsec-Transition",
+      "headRefName": "v00",
+      "headRefOid": "73f060c3cd448645061b16b031bba3f307f6e9f6",
+      "closedAt": "2025-06-08T09:37:05Z",
+      "mergedAt": "2025-06-08T09:37:05Z",
+      "mergedBy": "BasilGuo",
+      "mergeCommit": {
+        "oid": "b641f6d4ac0eba1631ec93e3d710274810525317"
       },
       "comments": [],
       "reviews": []
